@@ -1,0 +1,177 @@
+Week13 review:
+
+
+Inheritance
+Method Overriding
+
+Number class is a Super class
+Wrapper classes:
+	Integer extends Number
+	Double extends Number
+
+access modifiers
+
+    keywords used to define the scope or visibility (where you can use/access the variables, methods, etc]
+
+    [Most Visible] public  -> protected  -> default -> private [Least Visible]
+
+    public: accessible everywhere in the project
+
+    protected: accessible by the classes within the same packages and the sub classes in any package
+        (second part is about inheritance, so we will come back to this)
+
+    default: accessible within the same package
+        -> default is used when no other access modifier is defined
+
+    private: accessible only in the same class
+
+What is inherited from super class to sub class.
+
+Depends on Access modifiers of method or variable:
+	public -> all inherited anywhere in the project
+	protected -> all inherited anywhere in the project
+	default -> only inherited when sub class and super class are in same package
+	private -> not inherited. Accessing only in same class
+
+Screenshot: Mac: Command + control + Shift + 4
+			Windows:
+
+
+Your IntelliJ project:
+	- added classes with code.
+	- enabled GIT
+	- committed our code to local repository
+	- add gitignore
+	- Github:
+		1) login to GitHub > Goto repositories > create new repository
+		https://github.com/Murodil-Cydeo/java-live-review.git
+	- Add GitHub repository URL as our project remote
+	- Git push
+
+__________________________________________________________________
+
+Constructors in Inheritance
+    constructor is not inherited, but the child class constructor must always call the parent class constructor
+        -> using super() the parent constructor is called
+
+        -> the default constructor always called super() in the first line
+
+Method Overriding
+
+	change the implementation(code) of a method that is inherited from a super class
+		-> another way to phrase it: after inheriting a method we can change how it works
+
+	use of overriding: create method implementation that is more specific for the sub class
+
+	@Override
+		annotation that helps make sure you override the method correctly
+		using the annotation is optional, but recommended to use
+
+Method Overriding rules
+
+	method needs to be inherits
+	method signature should be the same
+		method signature: name + parameters
+	access modifier should be the same or more visible
+
+	return type should be same
+		*** or covariant: sub class of that return type (we can talk about later)
+__________________________________________________________________
+
+Inheritance questions
+
+IQ: Can you have more than one direct parent?
+    NO, java does not allow multi-inheritance ( multiple parents at the same time )
+
+IQ: What is the difference between this and super
+
+    this: reference to the instance of the current class
+        -> used to differentiate local variables and instance variables
+        -> used to access the instance members of the current class
+
+    super: reference to the instance of the parent class
+        -> used to access the instance members in the parent class
+
+IQ: What is the difference between this() and super()
+
+    this(): call a constructor in the same class
+        -> Based on the argument given you could call any constructor
+
+    super(): call the constructor from the parent class
+        -> default constructor always uses super() on the first line
+            -> In order to make an object of the child class we have to call the parent class constructor
+
+IQ: What is the difference between method overloading and overriding
+
+    overloading: have a method with the same name, different parameters
+        -> happens in the same class
+
+    overriding: changing the implementation of a method that came from the super class
+        -> happens between the super and sub class
+
+IQ: How can you override static methods?
+	static methods cannot be overridden, it is possible to declare a method with the same name in the sub class, but this is called method hiding, not overriding.
+
+	------------------------------------------------------------------------
+
+access modifiers with inheritance
+
+	private: cannot be inherited
+
+	default: can only be inherited within the same package
+
+	protected: can inherit the fields to the subclass no matter if its in the same package or not
+
+	public: can inherit anywhere in the project
+
+with inheritance: public and protected are the same
+without inheritance: default and protected are the same
+
+__________________________________________________________________
+
+Types of inheritance
+
+	Single inheritance: one class to another class
+
+		class Planet{
+		}
+
+		class Mars extends Planet{
+		}
+
+	Multi level: one class is the direct parent of one class and acts like the grandparent of another
+
+		class Animal {
+		}
+
+		class Dog extends Animal{
+		}
+
+		class Husky extends Dog {
+		}
+
+	Hierarchical: the same class is the direct parent of many sub classes. Those sub classes being like siblings
+
+		class Book {
+		}
+
+		class AudioBook extends Book {
+		}
+
+		class EBook extends Book {
+		}
+
+		class TextBook extends Book{
+		}
+
+__________________________________________________________________
+these were all there even if we didn't see them:
+
+Book.java
+
+import java.lang.*;
+public class Book extends Object{
+    public Book(){
+        super();
+    }
+}
