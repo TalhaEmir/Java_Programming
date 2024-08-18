@@ -1,4 +1,4 @@
-package MurodilSessions.week29;
+package MurodilSessions.week19yedek;
 
 /*
 Then make a class Runner in package access.a

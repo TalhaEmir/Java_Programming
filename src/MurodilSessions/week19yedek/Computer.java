@@ -1,4 +1,4 @@
-package MurodilSessions.week29;
+package MurodilSessions.week19yedek;
 /*
 Create a class Computer in package access.a
         define the instance variables with access modifiers:
