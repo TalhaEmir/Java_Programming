@@ -12,6 +12,7 @@ public class Items {
         boolean containsIpad=false;
 
         int num=0;
+         double totalPrice=0;
 
         for(int i=0; i< items.length ; i++){
             if(items[i].equalsIgnoreCase("Gloves")){
@@ -22,9 +23,11 @@ public class Items {
                 break;
             }
             System.out.println(items [i]+"-"+prices[i]+"-" +"#ID"+ itemIDs[i] );
+            totalPrice+=prices[i];
         }
 
         System.out.println( containsIpad);
         System.out.println( num);
+        System.out.println( totalPrice);
     }
 }

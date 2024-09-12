@@ -15,6 +15,11 @@ public class ClassMatesReversed {
             System.out.println(reversedName);
         }
 
+
+        System.out.println("================================================================");
+
+
+
         for (String eachName : names) {
 
             System.out.println(reverse(eachName));

@@ -16,12 +16,15 @@ public class Person {
         }
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
-        this.age = LocalDate.now().getYear() - dateOfBirth.getYear();
+       this.age = LocalDate.now().getYear() - dateOfBirth.getYear();
     }
-
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public char getGender() {
@@ -35,11 +38,6 @@ public class Person {
     public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
 
     public void drink() {
         System.out.println(name + " is drink");
@@ -62,7 +60,7 @@ public class Person {
 
     }
 
-    @Override
+
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +

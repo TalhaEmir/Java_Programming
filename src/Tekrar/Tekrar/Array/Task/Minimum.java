@@ -1,7 +1,5 @@
 package Tekrar.Tekrar.Array.Task;
 
-import Tekrar.Days.Day19Tekrar.min;
-
 public class Minimum {
 
     public static void main(String[] args) {

@@ -8,7 +8,7 @@ public class CopyOf {
         int [] numbers={10,20,30,40,50,60};
 
         Arrays.copyOf(numbers,3);// first three elemets of this numbers
-
+System.out.println(Arrays.toString(Arrays.copyOf(numbers,3)));
 
         int []number= Arrays.copyOf(numbers,3);//[10, 20, 30] --> kelimeyi ve lengthi vercen index degil
 

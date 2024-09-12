@@ -1,0 +1,77 @@
+package week14.day38.ThrowKeyword;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class ThrowKeyword {
+
+    public static void main(String[] args) {
+
+
+        System.out.println("Enter your age ");
+
+        int age= new Scanner(System.in).nextInt();
+        if(age<0 || age>150 ) {
+
+            if (age < 0) {
+                throw new InputMismatchException("Age of the person should not be negative ");
+
+            }else{
+                throw new InputMismatchException("Age of the person can not be greater than 150 : " + age);
+            }
+
+        }
+        //System.err.println("Invalid Age ");
+        // System.exit(1);
+
+        if (age >= 21 ) {
+            System.out.println("Eligible ");
+
+        }else{
+            System.out.println("Not eligible ");
+        }
+================================================================================================================
+
+        throw new RuntimeException("Runtime exception"); bu satrdan sonra bisey yazamassin
+        System.out.println("Hello World ");
+=================================================================================================================
+
+        throw= used for manually throwing exception
+
+
+        Yani biz kendimiz bir celiski sorun yaratiyoruz mesela bu olursa sistemi iptal et gibi
+
+        digerlerinde ornegin try catch veya throws da biz sorun cozuyoruz try ctach permanent thrwos ile temporarily cozuyourz
+
+
+        butun single Exception classlar tarafindan temsil edilir   butun single Exception classlara sahiptir
+        butun single Exception objeleri  classlardan gelir.
+
+        Sayet exception yaratacaksak bunnun icin obje yaratmamiz lazim throw ile
+
+        bunun icinde throw keywordu kullaniyoruz
+
+       ==>  throw new ExceptionType(MessageString);
+
+
+       ornegin belirli durumlarda program patlasin istiyorsak bunu kullaniyoruz
+
+
+  if (age < 0) {
+                throw new InputMismatchException("Age of the person should not be negative ");
+
+            }else{
+                throw new InputMismatchException("Age of the person can not be greater than 150 : " + age);
+            }
+
+
+            gibi
+=====================================================================================================================
+        syntax: throw exceptionObject
+
+
+    }
+
+
+    }
+

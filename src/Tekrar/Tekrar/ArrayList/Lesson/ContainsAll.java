@@ -31,7 +31,7 @@ public class ContainsAll {
         list2.add(2,"Java");
         System.out.println(list2);
 
-// both of side should be ArrayList it means both of them should be Collection
+// both of side should be ArrayList it means both of them should be Collection, order is not important , if there is one wrong complteley wrong
 
 
         System.out.println(list2.containsAll(list));//true or

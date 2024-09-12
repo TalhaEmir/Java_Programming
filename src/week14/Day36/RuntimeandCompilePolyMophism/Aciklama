@@ -1,0 +1,90 @@
+Compile-Time Polymorphism (Derleme Zamanı Polimorfizmi)
+Method Overloading compile-time polymorphism örneğidir. Bu, derleyici tarafından derleme zamanında çözümlenir. Yani, derleyici hangi metodun çağrılacağını, metodun imzasına (isim, parametre sayısı ve türleri) bakarak belirler. Overloading'de metodlar aynı isimde olabilir ama farklı parametre listelerine sahip olurlar. Derleyici bu farkı tanır ve uygun olan metodu çağırır.
+
+Örneğin: Eğer bir toplama işlemi yapmak için add(int a, int b) ve add(double a, double b) metodlarını overload ediyorsan, derleyici hangi metodun çağrılacağını parametrelerin türüne göre belirler.
+Statiklik: Overloading'de metodlar, içerdikleri işlemden bağımsız olarak derleme zamanında belirlendiği için statik sayılır. Bu, metodların hangi versiyonunun çalıştırılacağının derleme zamanında belirlenmesi anlamına gelir.
+Runtime Polymorphism (Çalışma Zamanı Polimorfizmi)
+Method Overriding ise runtime polymorphism örneğidir. Bu, çalışma zamanında çözümlenir. Yani, hangi metodun çağrılacağı, çalışma zamanında nesnenin gerçek türüne göre belirlenir. Overriding'de alt sınıftaki metod, üst sınıftaki metodla aynı imzaya (isim, parametreler, dönüş tipi) sahip olmalıdır. Bu durumda, metodu çağırdığında hangi sınıfın metodunun çalıştırılacağını, nesnenin gerçek türü belirler.
+
+Örneğin: Eğer Animal sınıfında bir sound() metodu var ve bu metod Dog sınıfında override edildiyse, Animal animal = new Dog(); şeklinde bir nesne yaratıldığında, animal.sound() çağrısı Dog sınıfındaki metodu çalıştırır.
+İçerik Önemi: Overriding'de metodun ismi ve parametre listesi aynı olmalı. Ancak metodun içeriği alt sınıfta farklı olabilir, bu da polimorfizmi sağlar. Yani, metodun içinde ne olduğundan çok, metodun imzası ve nesnenin türü önemlidir.
+Özet:
+Overloading: Derleme zamanında belirlenir, hangi metodun çağrılacağına parametrelerin türüne ve sayısına göre karar verilir. Bu yüzden compile-time polymorphism olarak adlandırılır.
+Overriding: Çalışma zamanında belirlenir, hangi metodun çağrılacağına nesnenin gerçek türüne göre karar verilir. Bu yüzden runtime polymorphism olarak adlandırılır.
+
+
+Bu açıklama, Compile-Time Polymorphism (Derleme Zamanı Polimorfizmi) olan Method Overloading ile ilgilidir. Basitçe anlatmak gerekirse:
+
+Method Overloading'de, aynı isimde birden fazla metod tanımlayabilirsin, ancak bu metodlar farklı parametre listelerine sahip olurlar (örneğin, parametre sayısı veya türü farklı olur).
+
+Programı derlerken (compile ederken), derleyici hangi metodun çağrılacağını parametre listesine bakarak belirler. Yani, hangi metodun çalışacağını senin metod çağrında kullandığın parametreler belirler.
+
+Örneğin, şöyle iki metodun olsun:
+
+java
+Kodu kopyala
+void print(int a) {
+    System.out.println("Integer: " + a);
+}
+
+void print(String s) {
+    System.out.println("String: " + s);
+}
+print(5) çağrısı print(int a) metodunu, print("Hello") çağrısı ise print(String s) metodunu çalıştırır. Yani, hangi metodun çalışacağını daha programı çalıştırmadan önce, derleme zamanında zaten biliyorsun.
+
+Özet: Method Overloading'de, hangi metodun çalışacağını derleme zamanında bilirsin. Çağırdığın metodun parametrelerine bakarak sadece o spesifik metod çalıştırılır. Başka bir metod devreye girmez.
+
+
+
+
+
+Şunu dedin:
+yani ikisi arasinddaki fark biz metodu yazdigimizda metodun kendi kendine hangi kodu sececgi hangilerinin islem yapilacaginini otomatik olarak eslestirilmesi , ama overriding de bizim bunu yapmamiz gerektigi
+
+
+
+Evet, doğru anlıyorsun! İşte ikisi arasındaki fark:
+
+Method Overloading (Compile-Time Polymorphism):
+Derleme Zamanında hangi metodun çağrılacağı otomatik olarak belirlenir.
+Aynı isimde birden fazla metodun olabilir, ama bu metodlar farklı parametre listelerine sahiptir.
+Derleyici, hangi metodun çağrılacağını parametre listesine bakarak otomatik olarak seçer. Senin ekstra bir şey yapmana gerek kalmaz.
+Örneğin:
+
+java
+Kodu kopyala
+void print(int a) {
+    System.out.println("Integer: " + a);
+}
+
+void print(String s) {
+    System.out.println("String: " + s);
+}
+Eğer print(5) yazarsan, print(int a) metodunu çağırır. Eğer print("Hello") yazarsan, print(String s) metodunu çağırır. Derleyici otomatik olarak doğru metodun hangisi olduğunu anlar.
+
+Method Overriding (Run-Time Polymorphism):
+Çalışma Zamanında hangi metodun çağrılacağını belirlersin.
+Bir sınıf, başka bir sınıftan (genellikle bir parent class) miras aldığında, bu sınıfta var olan bir metodu kendine özgü bir şekilde yeniden tanımlayabilirsin.
+Metodun ismi, dönüş tipi, ve parametre listesi aynı kalır; ancak metodun içeriği (implementation) subclass'ta farklı olabilir.
+Örneğin:
+
+java
+Kodu kopyala
+class Animal {
+    void sound() {
+        System.out.println("Some generic animal sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Bark");
+    }
+}
+Burada, Dog sınıfı Animal sınıfındaki sound metodunu override ediyor. Eğer bir Dog nesnesi oluşturup sound() metodunu çağırırsan, Dog sınıfındaki sound() metodu çalışır.
+
+Özetle:
+
+Overloading: Derleyici, hangi metodun çalışacağını otomatik olarak belirler.//
+Overriding: Sen hangi metodu override ettiğini belirlersin ve çalışma zamanı geldiğinde override edilen metod çalışır./// bodysi farkli

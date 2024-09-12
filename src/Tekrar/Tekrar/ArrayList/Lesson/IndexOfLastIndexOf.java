@@ -10,6 +10,7 @@ public class IndexOfLastIndexOf {
 
         // we can give index number or element
 
+
         list.add("list1");
         list.add("list1");
         list.add("list1");

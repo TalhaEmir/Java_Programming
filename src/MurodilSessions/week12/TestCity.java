@@ -3,6 +3,7 @@ package MurodilSessions.week12;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,6 +15,10 @@ public class TestCity {
         System.out.println("growth = " + city1.getGrowthRate());
         System.out.println("population = " + city1.getPopulation());
         System.out.println("state = " + city1.getState());
+        System.out.println("==============================================================================");
+
+
+
 
         String cityInfo = "Nashville-Davidson,16.2,634464,Tennessee";
         //convert cityInfo to City java object
@@ -25,12 +30,15 @@ public class TestCity {
 
         //Double.parseDouble(arr[1]) => returns double as primitive.
         //Double.valueOf(arr[1]) => return Double as wrapper object. ArrayList<Double>
-        List<String> allLines;
+        List<String> allLines=new ArrayList<>();
+
         try {
             allLines = Files.readAllLines(Paths.get("src/week12/cities.txt"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+
 
         System.out.println(allLines.size());
         System.out.println(allLines.get(0));
@@ -38,5 +46,3 @@ public class TestCity {
 
     }
 }
-
-

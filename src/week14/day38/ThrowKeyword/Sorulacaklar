@@ -1,0 +1,44 @@
+// bunu hocaya sor
+
+RuntimeException exception= new RuntimeException("qdqwqwdq");
+
+
+//throw exception;
+
+
+
+
+    RunTimeException exception = new RuntimeException();
+
+
+
+throw exception
+
+
+        ===============================
+
+        package week14.day38;
+
+        class CustomCheckedException extends Exception{
+
+        }
+
+
+        class  CustomUncheckedException extends RuntimeException{
+
+
+        }
+
+        public class CustomExceptions {
+
+            public static void main(String[] args) {
+
+                try {
+                    throw new CustomCheckedException();
+                } catch (CustomCheckedException e) {
+                    throw new RuntimeException(e);
+                }
+
+
+            }
+        }

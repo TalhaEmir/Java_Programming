@@ -1,0 +1,633 @@
+Iterable (King)
+
+ Data Structure:
+ Array
+ Collection
+Map
+
+
+Collection(I): size is dynamic,  Supports non primitives only, can increase or decrease the size
+
+1-List 2-Queue 3-Set
+
+    ||
+    ||
+    ||
+    v
+
+
+
+Collection Interface Provided
+size() isEmpty() add()
+addAll() remove() removeAll()
+removeIf() contains() containsAll()
+retainAll() clear() toArray()
+
+1)List(I):Has index number, Allows Duplicate,Child interface of Collection, we need to import from Util Package
+
+1.1 ArrayList :array based class, ramdomly access , accessing / searching the elements are fasting, duplicate okey
+1.2 LinkedList : node based class (doubly linked list) / insert and delete is faster, duplicate okey, you can add null
+1.3 Vector : Array based class , senkronized , slower time performance, duplicate okey
+1.4 Stack: Array based class , senkronized ,Last in, first out order (LIFO) -pop()method, duplicate okey,
+
+pop()= return removes the last inserted object from the Stack ->
+
+2)Set(I)
+
+None of Set we dont have get and we dont have regular  Order
+We can call the order with Iterate like Loop
+
+2.1 HashSet(C) :Order is random , accepts null, and fastest, no duplicates
+2.1.1LinkedHashSet :order is random, doesnt accept duplicates, but order is regular it is not like HashSet , regular order. no duplicates
+2.2.1 TreeSet (C): keeps the sorted order , does not accept null. smallest to gonna be first largest gonna be last
+
+3-)Quque(I);
+
+1-)Child interface of collection
+2-) Duplicates are allowed
+3-) There is no index number - First in First out order (FIFO)-poll() / return removes the first inserted object from the Quque
+
+ First in First out order (FIFO)-poll()  return removes the first inserted object from the Quque
+
+ Priority Queue (C)  ORDER IS RANDOM    DOES NOT ACCEPT NULL, duplicates okey
+ , ArrarDeququq(C) KEEPS THE INSERTION ORDER , DOES NPT ACCEPT NULL, duplicates okey
+ lINKEDlIST(C)    KEEPS THE INSERTION ORDER, ACCEPTS NULL , HAS INDEX NUMBER , duplicates okey
+=========================================================================================================
+
+senkronized: multiple threads are being executed one thread at a time
+
+advantage: thread -safety
+disadvantage: slower
+
+
+Process : exevution instance of program application
+
+threads: a sequence of execution within a processs
+
+Creating custom thread in Java:
+
+1-) by inheriting Thread Class
+2-)by inheriting Runnable Interface
+
+Multi-threading:
+Multiple thread are executed at the same time
+
+Multi tasking :
+two or more process are running
+
+
+
+
+               1-) ========Collections================
+
+
+
+ 1-)Collection is a group of individual objects as a single entity
+
+ 2-)Collections objects is a mutable means you can change and edit
+
+ 3-)You are able to add or remove increase size or decrease the size
+
+4-)Collections hold different non-primitive data types
+
+5-)Standarts data structure and there are ready methods to use
+
+
+6-)ArrayList part of collections
+
+7-)If we have primitives it can not be added directly
+
+8-) It supports Non primitives - it is autoboxing
+
+
+9-)Collections is dynamic size we can use so many methods
+
+
+10-)Collection ve Map birbirinden farkli. Fakat ayni mantikla calisiyorlar
+
+
+11-0Collection is a interface and Collections can hava a child interfaces with extends
+
+12-)Iterable we are just using for remove elements
+
+
+
+COLLECTIONSTAKI Iki buyuk tipinden biri 'te en buyuk veri tipi InterFace Iterable digeri Map
+
+
+
+
+13-) Collections almost we are using same as Array List methods excepts get() methods
+
+
+14-) we can use just get methods (ArrayList) for  InterFace List
+
+We can use these methods for Interface Set<E> ,InterFace List <E> ,InterFace Qeque <E>
+size() isEmpty() add()
+addAll() remove() removeAll()
+removeIf() contains() containsAll()
+retainAll() clear() toArray()
+
+
+==========Collections================
+
+                ^
+                ||
+                ||
+                ||
+                ||
+ 2-) Sonrasinda InterFace Collection<E>
+                ^
+                ^
+                ^
+        ||          ||                          ||
+        ||          ||                          ||
+        ||          ||                          ||
+        ||          ||                          ||
+        ||          ||                          ||
+  Interface Set<E>   InterFace List <E>         InterFace Qeque <E>
+
+
+  A ================================ InterfaceSet<E>  ===============================
+
+   1-) Ayni turden iki eleman tutulmasina izin vermiyor
+
+
+   2-)Null icinde oyle birden fazla kabul etmiyor
+
+
+   3-)Does not have index number
+
+
+   4-)Set Interfaceten turetilen bir yapi
+
+   5-) You can not create any object from Set
+
+   6-) Set Interface extend SortedSet also implemented by HashSet Class
+
+   Set InterFace Parent of SortedSet also parent of HashSet class
+
+
+Set have a relationship between these 3 class
+
+   Set<Integer>set1= new HashSet<>();
+
+    Set<Integer> set2= new LinkedHashSet<>();
+
+
+Set <Integer>set3=new TreeSet<>();
+
+
+   A1============== InterfaceSet<E> ====HashSet <E> =============================================
+
+
+1-) HashSet does not allow to duplicates but it means different
+
+2-) there is random order it means it has own order not like regular index
+
+
+
+   f(x) x^2 2 + xmod7 + sqrt (x)
+
+
+   f(a) = diyemeyecegimiz icin f(17) char degeri veriyourz dogru olmasada bu char degeri ornek  f(a) diyemeyecegimiz icine numarak yazmamiz lazim
+
+   f(b) diyemedigimiz icin onun char degeri  gibi olanb f(1*) diuyoruz oda bize 1001 veriyor
+
+
+f(z) diyemiyourz  f(28) diyoeum 101 degeri cikiyor
+
+
+Mantiken ilk ekledigimiz cikmais gerekirken hashleri ekleyeterek yaptigimiz icin boyle olmuyor
+
+
+ Hashing: HashSet, elemanları saklamak için bir hash tablosu kullanır.
+  Hash tablosu, elemanların depolanacağı bir dizi (array) gibi düşünülebilir.
+  Her bir eleman, hashCode() yöntemi kullanılarak bir "hash koduna" dönüştürülür.
+  Bu hash kodu, elemanın hangi dizin veya "bucket" (kova) içinde saklanacağını belirler.
+
+
+Benzersizlik: HashSet içindeki elemanların benzersiz olmasını sağlar.
+Bu, equals() ve hashCode() yöntemleri sayesinde yapılır.
+Bir eleman eklenirken, önce elemanın hash kodu hesaplanır ve elemanın uygun kovada olup olmadığı kontrol edilir.
+Eğer o kovada aynı hash koduna sahip başka bir eleman varsa, equals() yöntemi kullanılarak bu elemanın gerçekten aynı olup olmadığı kontrol edilir.
+Eğer aynı değilse, eleman kovaya eklenir.
+
+
+  Set<String> set = new HashSet<>();
+
+        // Eleman ekleme
+        set.add("Java");
+        set.add("Python");
+        set.add("JavaScript");
+
+        // Tekrar eden bir eleman eklenmeye çalışıldığında set'e eklenmez kendi icerisinde bir kontrol mekanizmasi mevcut booleanli var mj yok mu gibi
+        set.add("Java"); // Bu eklenmez çünkü set'te zaten mevcut
+
+        // Set elemanları yazdırma
+        System.out.println(set); // Çıktı: [Java, Python, JavaScript] (sıra garantisi yok)
+
+        // Bir elemanın var olup olmadığını kontrol etme
+        boolean exists = set.contains("Python"); // true döner
+        System.out.println("Set contains Python: " + exists);
+
+
+=================or=======================
+
+HashSet h= new HashSet();
+
+h.add("12");
+
+h.add(12) == hata vermez Collection da Colelctionun yapisi sayesinde farkli data tiplerini tutabiliyoruz
+
+h.add(12.);
+
+h.add(true);// boolaen ekledik
+
+h.add(null);
+
+
+peki bunlari nasil gezcek nasil gorcez h'in icindekileri?
+
+Iterator ile gezebilliyoruz asagida
+
+
+Iterator itr= h.iterator(); ==> bir nebi casting veya instance hatta loop gibi
+
+HashSet h= new HashSet(); icindekileri > bunun icine Iterator itr= h.iterator(); atiyourz
+
+while(itr.hasNext()){
+System.out.println(itr.next());
+}
+
+bunu kolay hali bu
+
+h.forEach(item-> System.out.println(item + ""))"
+
+
+
+
+
+hasNext her seferinde bir diger eleman var mi diye bakiyor fakat yazim sirasi bizim istedgimiz gibi degil
+
+Siralamayi umursamiyor, siralama yok burada hersey speifik yazcaz
+
+h.remove(12); indeks le degil hash numarasina gore
+
+sadece int 12 yi silcek
+
+
+null
+12
+12.0
+12
+true mesela
+
+   A1============== InterfaceSet<E> ====HashSet <E> =============================================
+
+                                ^
+                                ||
+                                ||
+                                ||
+
+
+
+   A1.2 ============== InterfaceSet<E>=============HashSet <E>==========================LinkedHashSet <E> ========================
+
+1-)It does not accepts duplicates
+2-) but order is regular it is not like HashSet , keep the insertion order
+
+      A2 ================================ InterfaceSet<E>=======TreeSet========================
+
+1-) Grandchold if Set
+
+2-) duplicates are not allowed
+
+3-)It is not have index number
+
+4-)Always maintenance sorted Ascending Order
+
+
+5-)If you add elements it always compare with the other elements
+
+6-)We can not get it Null
+
+7-)Compare the value of each object
+=============================================================================================================================================================
+
+
+
+  B ================================ InterFace List  ===============================
+
+
+
+1-Listeler ayni eleman olsa bile eklememize izin veriyor
+
+2-) Liste mantigi ile calisiyor alisveris listesi.Tekrarli elementlere izin veriyor
+
+3-) Elementleri bekleme sirasina gore tutuyor ve indekslerle yapiyor.
+
+4-)List sayesinde index vererek istedigimiz yerlere elemanlari gerebiliyoruz
+
+5-)List has index number
+
+
+6-)Elements= 5,0,10,8,25
+
+What is gonna be first element ? If you add 5 first it gonna 5
+
+List={5,0,10,8,25}
+
+7-) it is always protected order it never gonna change order for the list
+
+8-)you can added same elements no problem
+
+9-)child interface of collection
+
+10-) Richest clas in here Stack grand child class of List
+
+                                    ^
+                                    ||
+                                    ||
+                                    ||
+                                    ||
+
+                         Array List, LinkedList ,Vector, Stack
+
+
+  B A================================ Array List  ===============================
+
+  1-)Implements the lIst InterFace
+
+ 2-) internally uses array why it is different
+
+ 3-) retreivie the elements faster, working with index, allow to duplicate the elements
+
+ 4-)What is the advantages of using Array internally
+
+ We can access the elements randomly it means it is going directly fifth elements not like a loop
+
+5-) InterFace List <E>   has a get method
+    6-)     // retrieveing element faster
+
+
+
+  B B================================ Linked List  ===============================
+1-) it has same methods ArrayList
+2-)// also it is nowt allowd to call random access as ArrayList
+           // it going back and forward why it is slower it is not going direclty
+           ArrayList faster than LinkedLiST Because it is using Array implicitly
+           it is not using Array implicitly mean it is not fast as ArrayList it is using null base class
+           Element list stora as a nud
+
+           double linked has a advantage and disadvantage
+
+
+           advantage is =insert or deleting or removing much more faster
+           disadventage is= slower
+
+           if you wannt to add affter of before specifif elements LinkedList is faster
+           Because each value will have a pointer to the next value
+       3-) adding oer deleting element faster, working with index, allow to duplicate the elements
+
+
+ B C================================Vector Class List  ===============================
+
+ 1-)it is slower than LinkedLis and ArrayList
+ 2-)Internally uses array
+ 3-) It uses senkronized and every function seknronized
+
+ 4-) one vector st the time it is working for thread safety it is safety but is is slower
+
+ 5-) senkrozied version of arraylist
+
+B C 1 =================================Vector Class List  ========Stack Class================
+
+1-) Child class of vector
+
+2-) it is senkronizedand senkrozied version of arraylist
+
+3-) Last in, first out order (LIFO) -- WHICH  ONE S LAST ELEMENT THEN IF YOU WANT TO REMOVE LAST ELEMENT GONNA BE FIRST
+TO GO OUTSIDE FOR POP METHOD
+
+ilk giren en son cikar , son giren ilk cikar tasma mantigi gibi
+
+    =========Vector==  Process=======tur================
+
+   1-) An Instance of program running in a computer
+  2-)Programs that are scheduled for  execution in the CPU
+  3-) A process has a cide data and heap other segments
+  4-)Any application has a process
+  5-) Like java , google , mozilla firefox
+
+
+
+      =========Vector==Process====Thread============tur=============
+
+      1-) A subset of a process
+      2-) A sequence of execution within a process
+      3-) Every single process at least have one thread
+      4-)Shares all the resources of process
+
+      Process = Zoom -> Thread =99  EVERY ACTIVITY IS CREATING THREAT
+
+      5-) Every single process has to has a one thread
+
+      6-) In java we can create of our threads
+
+
+
+============================MultiTasking======tur=============
+
+1-) Many Process is working
+
+      =================  Multi Thread=============================
+      tow or more threads are being executed are multi threads
+
+Program==> generally top of the bottom but if we want to execute threads at the same time we are using multi threads
+
+
+
+      Process 1==> Thread 1 , Thread2, Thread 3
+      Process 2==> Thread 1 , Thread2, Thread 3
+      Process3==> Thread 1 , Thread2, Thread 3
+
+
+      Multi Threading in Java
+      1.Thread
+      2.Runnable
+
+Creating Custom Thread ==> public class ThreadHelloWorld extends Thread
+
+
+
+      =================  Multi Thread==Thread====tur==========
+
+
+
+      //
+
+      synchronized Durumu Nedir?
+      Java'da synchronized anahtar kelimesi, birden fazla thread'in aynı anda aynı kaynağa erişmesini engellemek için kullanılır.
+      Eğer bir thread bir metodu ya da bloğu synchronized olarak tanımlanmışsa, o thread'in işlemi bitmeden başka bir thread o metodu ya da bloğu çalıştıramaz.
+      Bu, veri tutarlılığını ve thread'lerin çakışmasını (race condition) önler.
+      //
+      synchronized Kullanımı Örneği
+      Şimdi, sizin verdiğiniz örneği göz önüne alarak bir synchronized kullanım örneği düşünelim. Diyelim ki, her thread bir ortak kaynağa erişip üzerinde işlem yapıyor. Bu durumda, aşağıdaki gibi bir synchronized metod ekleyebiliriz:
+
+1-) Thread Class==> if this class not extend other class
+2-) Runnable Interface ==> if this class extend other class Runnble Interface
+
+
+3-)Evet, bu doğru. Kodunuzda thread1.start(), thread2.start(), thread3.start(), thread4.start(), ve thread5.start() çağrıları,
+ // beş farklı thread'in neredeyse aynı anda çalışmaya başlamasına neden olur.
+ // Ancak, her bir thread birbirinden bağımsız olarak çalışır ve tamamlanmak için diğer thread'lerin bitmesini beklemez.
+
+4-) If class currently doesnt extend or didnt extend by you you can use Thread otherwise , it means aldready extend you have to use Runnable
+
+5-) Creating Custom Thread ==> public class ThreadHelloWorld extends Thread <==========
+
+public class ThreadHelloWorld extends ClassB ==>You can not use Thread Class you have to use Runnable
+
+6-)First Run then Start method
+
+7-)You have to override the Run method atThread Class ( you can edit and put up to you
+public void run() {
+        for(int i=1; i< 6 ; i++){
+            System.out.println("Hello world " + i + "from thread  " + threadNumber);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+               e.printStackTrace();
+            }
+
+
+      =================  Multi Thread==Runnable======tur=======
+
+public class ThreadHelloWorld extends ClassB implements Runnable
+
+=========================================================================================================================
+  C ===============================  InterFace Qeque <E>  ===============================
+1-)Ilk giren ilk cikar mantigi var
+2-)Fifo deniyor first in first out
+3-) Bu listede ilk a giriyosa ilk a yazdirilir hani veri olarak ilk 2 girerse bizde 2 3 4 5 6 varsa ilk 2 yi yazdirir
+4-) Children INTERFACE OF Collection
+5-)There is no index number
+6-) Duplication are allows
+7-)Poll method
+
+
+
+
+
+==================================C1.1=========== InterFace Qeque <E>=====DEQUE=======ARRAYDEQUECLASS=================================
+
+1-) it implements deque interface not direclty Queue interface
+2-) Maintain the insertion ordewr
+3-)  but maintain the insertion order
+4-)Fifo deniyor first in first out
+5-) Bu listede ilk a giriyosa ilk a yazdirilir hani veri olarak ilk 2 girerse bizde 2 3 4 5 6 varsa ilk 2 yi yazdirir
+6-)Accept the null values
+
+
+==================================C1.2=========== InterFace Qeque <E>===========PriorityQueueClass=================================
+
+1-)Does not Accept the null values
+2-) Maintains the random order
+Yani, PriorityQueue'ya eklenen elemanlar, kuyruğa eklendikleri sıraya göre değil, belirlenen önceliğe göre sıralanır.
+Örneğin, PriorityQueue<Integer> nesnesi oluşturduğunuzda ve sayıları eklediğinizde,
+bu sayılar küçükten büyüğe doğru bir sıralama içinde saklanır.
+En küçük değer her zaman kuyruğun başında olur ve poll() veya peek() yöntemleriyle erişilir.
+
+
+
+
+
+
+
+ ===============================  Map (I) Collection of Pairs (key& value) ===============================
+
+ 1-)Yapilari collectiona benzer ama colllectionla bir iliskileri yok
+
+ 2-)Bunda key value mantigi var. Key can not be duplicated , key should be unique
+
+3-)size is dynamic can increased and decreased
+
+4-)does not support primitives
+
+5-)Key can not be duplicated
+
+
+
+
+
+
+ Map1.1 HashMap
+ Map1.2 Hashtable
+ Map 1.3 SortedMap
+
+
+ Map->HashMap->Linked HashMap 1.1.1
+
+ Map-SortedMap->TreeMAP 1.3.1
+
+
+ ==============================================Map->HashMap=================================
+
+1-)Maintains the random order- it has own order not like regular index order
+
+2-)Accepts null key and values
+
+3-It is fastest method at   the map
+
+4-)Key not can be duplicated ,
+
+
+
+========================================= Map->HashMap->Linked HashMap 1.1.1=================================
+
+1-)It is the only one maintains the insertion order. Like regular index order first added gonna be first
+
+2-)first gonna be head,  lastest one gonna be tail
+
+3-)Accepts null key and values
+
+4-)Key not can be duplicated ,
+
+5-) it can not be primitve
+
+
+=========================================== Map-SortedMap->TreeMAP 1.3.1===========================================
+
+1-) Maintains the sorted order = ya alfabetik ordera gore ya da char gibi numaralra gore en kucuk olan en basa
+
+en cok olan en sona
+
+2-) key can not be null== values can be nul
+
+
+========================================== Map1.2 Mashtable========================================================
+
+1-)Maintains the random order- it has own order not like regular index order
+
+2-) Does not accept any null key or values
+
+3-) Senkronized (Thread-Safe);
+
+
+
+===============================+++++=====Iterable (King)=========+++++========================================
+
+1-)Parent Interface of Collection InterFace
+
+2-)Allows the object to be iterated by using iterator
+
+3-) we are using for the remove the elements
+
+
+Iterator() methods
+
+1-)hasNext() if has next true we can use next method
+2-)next() diger elemana gecebiliriz
+3-)remove()
+

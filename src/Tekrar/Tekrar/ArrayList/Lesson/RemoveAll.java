@@ -2,6 +2,7 @@ package Tekrar.Tekrar.ArrayList.Lesson;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class RemoveAll {
     public static void main(String[] args) {
@@ -13,6 +14,15 @@ public class RemoveAll {
 
         System.out.println(list2);//[1, 2, 3, 4, 5]
 
+
+
+// Veya doğrudan elemanlarla:
+
+        List<String> list3  = Arrays.asList("apple", "banana", "cherry");
+
+
+
+        list2.removeAll(Arrays.asList(10,20));
 
     }
 }

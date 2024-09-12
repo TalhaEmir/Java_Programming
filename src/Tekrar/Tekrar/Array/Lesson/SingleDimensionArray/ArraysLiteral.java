@@ -6,7 +6,7 @@ public class ArraysLiteral {
 
     public static void main(String[] args) {
 
-        String []names={"Java", "Phyton","C**"+ "RUBY","C++"};
+        String []names={"Java", "Phyton","C**"+ "RUBY","C++"};//{"Java", "Phyton","C**"+ "RUBY","C++"}; bu kisim Arrays Literal
         int [] numbers={10,20,30,40,40,40};// we can not change the size but we can update the element
 
         System.out.println(numbers.length);//6

@@ -1,8 +1,6 @@
 package Tekrar.Tekrar.StringManipulation.Tasks;
 import java.util.Scanner;
 
-import groupworkstrainin.people;
-
 public class TipCalculator {
     /*
 8. Create a class called TipCalculator, and write a program for a tip calculator.

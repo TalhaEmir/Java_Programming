@@ -2,7 +2,7 @@ package Tekrar.Tekrar.Array.Lesson.SingleDimensionArray;
 
 import java.util.Arrays;
 
-public class CopyofRange {
+public class  CopyofRange {
     public static void main(String[] args) {
         int [] numbers={10,20,30,40,50,60};
 

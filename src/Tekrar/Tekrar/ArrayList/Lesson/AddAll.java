@@ -2,6 +2,7 @@ package Tekrar.Tekrar.ArrayList.Lesson;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class AddAll {
 
@@ -38,6 +39,9 @@ public class AddAll {
         System.out.println(list2.addAll(Arrays.asList("lia","olur" )));
         System.out.println(list2.addAll(1,Arrays.asList("lia","lista" ))); // after first index
         System.out.println(list2);
+
+        String[] array = {"apple", "banana", "cherry"};
+        List<String> list4 = Arrays.asList(array);
 
 
 

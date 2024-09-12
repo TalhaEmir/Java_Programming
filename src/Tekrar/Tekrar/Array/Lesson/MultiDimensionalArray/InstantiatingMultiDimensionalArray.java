@@ -13,9 +13,7 @@ public class InstantiatingMultiDimensionalArray {
 
         System.out.println(Arrays.toString(arr2D[1]));//[3, 4, 5]
 
-        System.out.println(Arrays.toString(arr2D[0]));//[1, 2]
-
-
+        System.out.println(arr2D[0][1]);//2
 
     }
 }

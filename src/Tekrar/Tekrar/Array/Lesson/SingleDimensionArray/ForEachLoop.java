@@ -14,5 +14,11 @@ public class ForEachLoop {
         for(String each:names){
             System.out.println(each);
         }
+
+
+        for(int each: numbers){
+            System.out.println(each);
+
+        }
     }
 }

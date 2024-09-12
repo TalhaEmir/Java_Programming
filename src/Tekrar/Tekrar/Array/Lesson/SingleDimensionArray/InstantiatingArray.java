@@ -8,10 +8,13 @@ public class InstantiatingArray {
         int [] numbers;
         numbers=new int[5];// defaukt value if int 0 it means there are 5 zero inside the this number array
 
-        System.out.println(Arrays.toString(numbers));//[0, 0, 0, 0, 0]
+        System.out.println(Arrays.toString(numbers));//[0, 0, 0, 0, 0] yazilmasi icin
 
 
         numbers[1]=20;
+        System.out.println(Arrays.toString(numbers));
+        numbers[2]=10;
+        numbers[1]=15;
         //numbers[6]=70;// wrong our maximum number 5, index out of exception
 
         System.out.println(Arrays.toString(numbers));// for one dimensional array you have to use toString method

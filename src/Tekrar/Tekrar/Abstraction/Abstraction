@@ -1,0 +1,38 @@
+Construction can not be inherited
+
+Abstract Method
+• A method that does not have body, only signature.
+
+
+Abstract class can extend another abstract class
+
+Evet, bir abstract class (soyut sınıf) bir veya daha fazla interface (arayüz) implement edebilir. Bu, soyut sınıfın belirli bir arayüzde tanımlanan metodları kısmen veya tamamen implement etmesine olanak tanır. Eğer soyut sınıf arayüzde tanımlanan metodları implement etmezse, bu metodların uygulanması alt sınıflara bırakılır.
+
+Örneğin:
+
+
+
+Method without body (implementation) no implementation
+
+A method doesnt have a body
+A method thats meant to be overridden
+
+Abtsract class can not create pobject from itself t means can not be instensiated , no instance from abstract class,
+
+inherited only
+
+Concrete class has to override every method
+
+
+can not be static Abstract method and can not be final , can not be private
+
+
+devclared in only interface or abstreact class
+
+• A method that’s meant to be overridden.  why? yes
+
+
+The abstract keyword is used to create abstract method
+• Abstract Method can not be included final , private, static in the method signature
+. with abstract class ignore the abstract parents abstract method (Yani eger parent class ve subclassi abstract sa subclass parent clasin abstract
+metodlarini gozardi eder ama subclasin subclass lari butun abstract metodlari almak zorundadir)
